@@ -1,0 +1,37 @@
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+html, body, .full-height{
+    height: 100%;
+}
+
+.selectImage:hover{
+    box-shadow: 0 0 4px #2aabd2;
+    -webkit-box-shadow: 0 0 4px #2aabd2;
+    -moz-box-shadow: 0 0 4px #2aabd2;
+    cursor: pointer;
+}
+
+.imageSelected{
+    box-shadow: 0 0 4px #2aabd2;
+    -webkit-box-shadow: 0 0 4px #2aabd2;
+    -moz-box-shadow: 0 0 4px #2aabd2;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

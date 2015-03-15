@@ -1,0 +1,49 @@
+
+================================================================================
+FATTO
+================================================================================
+
+
+
+
+================================================================================
+DA FARE
+================================================================================
+
+- Quando inserisco un tag già presente sul DB esplode giustamente -> gestirlo!
+- Filtrare in qualche modo gli array provenienti da GET e POST. Per ora devo farlo
+  sonlo in InsertArticle.php
+
+
+
+================================================================================
+CONTROLLARE
+================================================================================
+
+Attenzione a salvare un articolo nuovo a cui sono stae associate immagini nuove!
+
+
+
+================================================================================
+NOTE
+================================================================================
+
+Se non cripto le password sul server prima di inviarle al DB queste viaggiano
+in chiaro nel tragitto Server -> DB.
+Quindi, se per le immagini passo al db il nome con cui salvo l'immagine
+sul server, questa passa in chiaro nel tragitto Server -> DB e tutti
+potrebbero scoprire qual è xD
+
+
+
+
+
+
+
+
+
+
+
+
+
+

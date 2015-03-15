@@ -1,0 +1,9 @@
+
+// COMPORTAMENTO ASSIGN e DISPLAY CON PATH RELATIVO
+================================================================================
+Il path relativo parte sempre dalla base della cartella del template.
+Nel nostro caso "View/Smarty/Templates".
+Cioè il percorso dei template che abbiamo assegnato noi nella configurazione
+di Smarty all'interno del file "Include/SmartySetup.php"
+
+
