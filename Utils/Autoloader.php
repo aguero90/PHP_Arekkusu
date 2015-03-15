@@ -8,21 +8,21 @@
 class Autoloader {
 
     public static function smartyAutoloader($class) {
-        $path = $_SERVER['DOCUMENT_ROOT'] . "/Arekkusu/Lib/Smarty-3.1.17/libs/{$class}.class.php";
+        $path = $_SERVER['DOCUMENT_ROOT'] . "/PHP_Arekkusu/Lib/Smarty-3.1.17/libs/{$class}.class.php";
         if (is_readable($path)) {
             require_once $path;
         }
     }
 
     public static function includeAutoloader($class) {
-        $path = $_SERVER['DOCUMENT_ROOT'] . "/Arekkusu/Include/{$class}.php";
+        $path = $_SERVER['DOCUMENT_ROOT'] . "/PHP_Arekkusu/Include/{$class}.php";
         if (is_readable($path)) {
             require_once $path;
         }
     }
 
     public static function utilsAutoloader($class) {
-        $path = $_SERVER['DOCUMENT_ROOT'] . "/Arekkusu/Utils/{$class}.php";
+        $path = $_SERVER['DOCUMENT_ROOT'] . "/PHP_Arekkusu/Utils/{$class}.php";
         if (is_readable($path)) {
             require_once $path;
         }
@@ -33,21 +33,21 @@ class Autoloader {
     // ========================================================================
 
     public static function dataLayerAutoloader($class) {
-        $path = $_SERVER['DOCUMENT_ROOT'] . "/Arekkusu/Data/Layer/{$class}.php";
+        $path = $_SERVER['DOCUMENT_ROOT'] . "/PHP_Arekkusu/Data/Layer/{$class}.php";
         if (is_readable($path)) {
             require_once $path;
         }
     }
 
     public static function modelAutoloader($class) {
-        $path = $_SERVER['DOCUMENT_ROOT'] . "/Arekkusu/Data/Model/{$class}.php";
+        $path = $_SERVER['DOCUMENT_ROOT'] . "/PHP_Arekkusu/Data/Model/{$class}.php";
         if (is_readable($path)) {
             require_once $path;
         }
     }
 
     public static function modelImplAutoloader($class) {
-        $path = $_SERVER['DOCUMENT_ROOT'] . "/Arekkusu/Data/Impl/MySQL/{$class}.php";
+        $path = $_SERVER['DOCUMENT_ROOT'] . "/PHP_Arekkusu/Data/Impl/MySQL/{$class}.php";
         if (is_readable($path)) {
             require_once $path;
         }
@@ -58,21 +58,21 @@ class Autoloader {
     // ========================================================================
 
     public static function controllerAutoloader($class) {
-        $path = $_SERVER['DOCUMENT_ROOT'] . "/Arekkusu/Controller/{$class}.php";
+        $path = $_SERVER['DOCUMENT_ROOT'] . "/PHP_Arekkusu/Controller/{$class}.php";
         if (is_readable($path)) {
             require_once $path;
         }
     }
 
     public static function controllerFrontAutoloader($class) {
-        $path = $_SERVER['DOCUMENT_ROOT'] . "/Arekkusu/Controller/Front/{$class}.php";
+        $path = $_SERVER['DOCUMENT_ROOT'] . "/PHP_Arekkusu/Controller/Front/{$class}.php";
         if (is_readable($path)) {
             require_once $path;
         }
     }
 
     public static function controllerBackAutoloader($class) {
-        $path = $_SERVER['DOCUMENT_ROOT'] . "/Arekkusu/Controller/Back/{$class}.php";
+        $path = $_SERVER['DOCUMENT_ROOT'] . "/PHP_Arekkusu/Controller/Back/{$class}.php";
         if (is_readable($path)) {
             require_once $path;
         }
