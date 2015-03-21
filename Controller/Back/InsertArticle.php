@@ -64,6 +64,7 @@ class InsertArticle extends ArekkusuBaseController {
         $article->setTags($arr);
 
         $this->getDataLayer()->storeArticle($article);
+        $this->getSmarty()->assign("inserted", "true"); // diciamo che l'inserimento è andato a buon fine
     }
 
 }

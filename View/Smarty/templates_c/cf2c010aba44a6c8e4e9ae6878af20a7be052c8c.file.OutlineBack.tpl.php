@@ -1,4 +1,31 @@
-<!DOCTYPE html>
+<?php /* Smarty version Smarty-3.1.17, created on 2015-03-21 08:28:24
+         compiled from "C:\wamp\www\PHP_Arekkusu\View\Smarty\Templates\Back\OutlineBack.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:16493550c6f00958714-00627155%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    'cf2c010aba44a6c8e4e9ae6878af20a7be052c8c' => 
+    array (
+      0 => 'C:\\wamp\\www\\PHP_Arekkusu\\View\\Smarty\\Templates\\Back\\OutlineBack.tpl',
+      1 => 1426926502,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '16493550c6f00958714-00627155',
+  'function' => 
+  array (
+  ),
+  'version' => 'Smarty-3.1.17',
+  'unifunc' => 'content_550c6f009f7269_60602312',
+  'variables' => 
+  array (
+    'app_name' => 0,
+    'subSectionActive' => 0,
+    'contentTemplate' => 0,
+  ),
+  'has_nocache_code' => false,
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_550c6f009f7269_60602312')) {function content_550c6f009f7269_60602312($_smarty_tpl) {?><!DOCTYPE html>
 
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -8,7 +35,8 @@
 
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>{$app_name}</title>
+        <title><?php echo $_smarty_tpl->tpl_vars['app_name']->value;?>
+</title>
         <meta name="description" content="My site">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -77,34 +105,35 @@
                         </div>
                         <ul class="nav nav-pills nav-stacked">
 
-                            <li role="presentation" {if $subSectionActive == 0}class="active"{/if}><a href="index.php?s=0&ss=0">Articolo</a></li>
-                            <li role="presentation" {if $subSectionActive == 1}class="active"{/if}><a href="index.php?s=0&ss=1">Immagine</a></li>
-                            <li role="presentation" {if $subSectionActive == 2}class="active"{/if}><a href="index.php?s=0&ss=2">Tag</a></li>
+                            <li role="presentation" <?php if ($_smarty_tpl->tpl_vars['subSectionActive']->value==0) {?>class="active"<?php }?>><a href="index.php?s=0&ss=0">Articolo</a></li>
+                            <li role="presentation" <?php if ($_smarty_tpl->tpl_vars['subSectionActive']->value==1) {?>class="active"<?php }?>><a href="index.php?s=0&ss=1">Immagine</a></li>
+                            <li role="presentation" <?php if ($_smarty_tpl->tpl_vars['subSectionActive']->value==2) {?>class="active"<?php }?>><a href="index.php?s=0&ss=2">Tag</a></li>
                         </ul>
 
                         <div class="page-header">
                             <h1><small>Rimuovi</small></h1>
                         </div>
                         <ul class="nav nav-pills nav-stacked">
-                            <li role="presentation" {if $subSectionActive == 3}class="active"{/if}><a href="index.php?s=0&ss=3">Articolo</a></li>
-                            <li role="presentation" {if $subSectionActive == 4}class="active"{/if}><a href="index.php?s=0&ss=4">Immagine</a></li>
-                            <li role="presentation" {if $subSectionActive == 5}class="active"{/if}><a href="index.php?s=0&ss=5">Tag</a></li>
+                            <li role="presentation" <?php if ($_smarty_tpl->tpl_vars['subSectionActive']->value==3) {?>class="active"<?php }?>><a href="index.php?s=0&ss=3">Articolo</a></li>
+                            <li role="presentation" <?php if ($_smarty_tpl->tpl_vars['subSectionActive']->value==4) {?>class="active"<?php }?>><a href="index.php?s=0&ss=4">Immagine</a></li>
+                            <li role="presentation" <?php if ($_smarty_tpl->tpl_vars['subSectionActive']->value==5) {?>class="active"<?php }?>><a href="index.php?s=0&ss=5">Tag</a></li>
                         </ul>
 
                         <div class="page-header">
                             <h1><small>Modifica</small></h1>
                         </div>
                         <ul class="nav nav-pills nav-stacked">
-                            <li role="presentation" {if $subSectionActive == 6}class="active"{/if}><a href="index.php?s=0&ss=6">Articolo</a></li>
-                            <li role="presentation" {if $subSectionActive == 7}class="active"{/if}><a href="index.php?s=0&ss=7">Immagine</a></li>
-                            <li role="presentation" {if $subSectionActive == 8}class="active"{/if}><a href="index.php?s=0&ss=8">Tag</a></li>
+                            <li role="presentation" <?php if ($_smarty_tpl->tpl_vars['subSectionActive']->value==6) {?>class="active"<?php }?>><a href="index.php?s=0&ss=6">Articolo</a></li>
+                            <li role="presentation" <?php if ($_smarty_tpl->tpl_vars['subSectionActive']->value==7) {?>class="active"<?php }?>><a href="index.php?s=0&ss=7">Immagine</a></li>
+                            <li role="presentation" <?php if ($_smarty_tpl->tpl_vars['subSectionActive']->value==8) {?>class="active"<?php }?>><a href="index.php?s=0&ss=8">Tag</a></li>
                         </ul>
                     </nav>
                 </div>
                 <!-- CONTENT
                 ============================================================ -->
                 <div class="col-md-10">
-                    {include file=$contentTemplate}
+                    <?php echo $_smarty_tpl->getSubTemplate ($_smarty_tpl->tpl_vars['contentTemplate']->value, $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
+
                 </div>
             </div>
         </div>
@@ -146,4 +175,4 @@
         </script>
 
     </body>
-</html>
+</html><?php }} ?>

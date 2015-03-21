@@ -1,12 +1,37 @@
-
+<?php /* Smarty version Smarty-3.1.17, created on 2015-03-21 08:17:41
+         compiled from "C:\wamp\www\PHP_Arekkusu\View\Smarty\Templates\Back\InsertImage.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:20016550c6f0a39c993-61904231%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '6e25e8c738d3eff1aa28fdda6b1d931221d71be5' => 
+    array (
+      0 => 'C:\\wamp\\www\\PHP_Arekkusu\\View\\Smarty\\Templates\\Back\\InsertImage.tpl',
+      1 => 1426925611,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '20016550c6f0a39c993-61904231',
+  'function' => 
+  array (
+  ),
+  'version' => 'Smarty-3.1.17',
+  'unifunc' => 'content_550c6f0a3d9479_66332056',
+  'variables' => 
+  array (
+    'inserted' => 0,
+  ),
+  'has_nocache_code' => false,
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_550c6f0a3d9479_66332056')) {function content_550c6f0a3d9479_66332056($_smarty_tpl) {?>
 <div class="container">
 
-    {if isset($inserted)}
+    <?php if (isset($_smarty_tpl->tpl_vars['inserted']->value)) {?>
         <div class="alert alert-success alert-dismissible" role="alert">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             <p>Inserimento effettuato con successo!</p>
         </div>
-    {/if}
+    <?php }?>
 
     <div class="row">
         <ol class="breadcrumb">
@@ -36,4 +61,4 @@
             </div>
         </form>
     </div>
-</div>
+</div><?php }} ?>

@@ -75,6 +75,11 @@ interface Article {
     public function setImages($images);
 
     /**
+     * @return bool true if the article has image $image, false otherwise
+     */
+    public function hasImage(ImageMySQL $image);
+
+    /**
      * @return Array the array of article's tags
      */
     public function getTags();
@@ -84,4 +89,9 @@ interface Article {
      * @return Article the article object
      */
     public function setTags($tags);
+
+    /**
+     * @return bool true if the article has tag $tag, false otherwise
+     */
+    public function hasTag(TagMySQL $tag);
 }

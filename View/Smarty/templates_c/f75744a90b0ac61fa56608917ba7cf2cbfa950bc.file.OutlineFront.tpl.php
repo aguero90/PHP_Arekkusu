@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.17, created on 2015-03-15 15:57:09
+<?php /* Smarty version Smarty-3.1.17, created on 2015-03-20 19:16:40
          compiled from "C:\wamp\www\PHP_Arekkusu\View\Smarty\Templates\Front\OutlineFront.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:646255059dc58cfb87-73483977%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f75744a90b0ac61fa56608917ba7cf2cbfa950bc' => 
     array (
       0 => 'C:\\wamp\\www\\PHP_Arekkusu\\View\\Smarty\\Templates\\Front\\OutlineFront.tpl',
-      1 => 1426430607,
+      1 => 1426878949,
       2 => 'file',
     ),
   ),
@@ -15,14 +15,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.17',
+  'unifunc' => 'content_55059dc59ed404_64217661',
   'variables' => 
   array (
     'app_name' => 0,
     'contentTemplate' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.17',
-  'unifunc' => 'content_55059dc59ed404_64217661',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_55059dc59ed404_64217661')) {function content_55059dc59ed404_64217661($_smarty_tpl) {?><!DOCTYPE html>
 
@@ -75,9 +75,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">
-                        <img alt="Brand" src=""  />
-                    </a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
@@ -91,27 +88,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
         <!-- HEADER
         ==================================================================== -->
-        <div class="jumbotron full-height">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-2 animated fadeInLeft">
-                        <img src="View/Img/logo_HTML5.png" alt="Me" class="img-circle img-responsive">
-                    </div>
-                    <div class="col-md-8 col-md-offset-2 animated fadeInDown">
-                        <h1>Arekkusu90</h1>
-                        <br />
-                        <p>
-                            Sono un laureando presso la facolt&agrave; d'informatica della citt&agrave; de L'Aquila.
-                            Appassionato di tutte le tecnologie riguardanti il web sia dal punto di vista dello sviluppo che da quello del design.
-                        </p>
-                        <p>
-                            Questa pagina nasce con l'intento di accogliere tutte le mie prove, impressioni,
-                            esperimenti e commenti sui vari aspetti dello sviluppo web.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
+
 
         <!-- BODY
         ==================================================================== -->

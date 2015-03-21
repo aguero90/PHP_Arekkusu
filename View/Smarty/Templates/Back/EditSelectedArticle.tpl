@@ -1,38 +1,32 @@
 
 <div class="container">
 
-    {if isset($inserted)}
-        <div class="alert alert-success alert-dismissible" role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <p>Inserimento effettuato con successo!</p>
-        </div>
-    {/if}
-
     <div class="row">
         <ol class="breadcrumb">
             <li>Gestione</li>
-            <li>Inserisci</li>
-            <li class="active">Articolo</li>
+            <li>Modifica</li>
+            <li>Articolo</li>
+            <li class="active">{$article->getTitle()}</li>
         </ol>
     </div>
 
     <div class="row">
-        <form action="index.php" method="POST" class="form-horizontal imageSelectionForm">
+        <form class="form-horizontal" action="index.php" method="POST">
 
             <input type="hidden" name="s" value="0">
-            <input type="hidden" name="ss" value="0">
+            <input type="hidden" name="ss" value="6">
 
             <div class="form-group">
                 <label for="title" class="col-sm-1 control-label">Titolo</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="title" placeholder="Titolo" name="title" required="required">
+                    <input type="text" class="form-control" id="title" value="{$article->getTitle()}" placeholder="Titolo" name="title" required="required">
                 </div>
             </div>
 
             <div class="form-group">
                 <label for="text" class="col-sm-1 control-label">Testo</label>
                 <div class="col-sm-10">
-                    <textarea id="text" class="form-control textEditor" name="text" rows="10"></textarea>
+                    <textarea id="text" class="form-control textEditor" name="text" rows="10">{$article->getText()|unescape:"htmlall"}</textarea>
                 </div>
             </div>
 
@@ -57,7 +51,7 @@
                                             <div class="row">
                                                 {foreach $images as $image}
                                                     <div class="col-xs-6 col-md-3">
-                                                        <div class="thumbnail selectImage">
+                                                        <div class="thumbnail selectImage {if $article->hasImage($image)}imageSelected{/if}}">
                                                             <img src="uploads/{$image->getFalseName()}" alt="{$image->getTrueName()}" data-ID="{$image->getID()}"/>
                                                         </div>
                                                     </div>
@@ -74,7 +68,15 @@
 
                         <!-- Thumbnail per immagini scelte -->
                         <!-- sarà riempito da main.js -->
-                        <div class="row" id="selectedImagesThumbnail"></div>
+                        <div class="row" id="selectedImagesThumbnail">
+                            {if $article->hasImage($image)}
+                                <div class='col-xs-6 col-md-3' data-imageID='{$image->getID}'>
+                                    <div class='thumbnail selectImage'>
+                                        <img src="uploads/{$image->getFalseName()}" alt="{$image->getTrueName()}" data-ID="{$image->getID()}"/>
+                                    </div>>
+                                </div>
+                            {/if}
+                        </div>
 
                     {else}
                         <p>Non esistono immagini</p>
@@ -89,7 +91,7 @@
                     {if $tags|@count > 0}
                         <select class="form-control multiselect-with-plugin" name="tag[]" multiple>
                             {foreach $tags as $tag}
-                                <option value="{$tag->getID()}">{$tag->getName()}</option>
+                                <option value="{$tag->getID()}" {if $article->hasTag($tag)}selected="selected"{/if}>{$tag->getName()}</option>
                             {/foreach}
                         </select>
                     {else}
@@ -100,7 +102,7 @@
 
             <div class="form-group">
                 <div class="col-sm-offset-1 col-sm-10">
-                    <button type="submit" class="btn btn-primary" name="ia" value="1">Inserisci</button>
+                    <button type="submit" class="btn btn-primary" name="ea" value="1">Modifica</button>
                 </div>
             </div>
         </form>

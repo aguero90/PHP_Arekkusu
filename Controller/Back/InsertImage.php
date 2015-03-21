@@ -41,6 +41,8 @@ class InsertImage extends ArekkusuBaseController {
 
 
                 move_uploaded_file($file['tmp_name'], self::UPLOAD_DIR . $image->getFalseName());
+
+                $this->getSmarty()->assign("inserted", "true"); // diciamo che l'inserimento è andato a buon fine
             }
         }
     }

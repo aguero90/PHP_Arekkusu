@@ -1,4 +1,3 @@
-ArticleList.tpl
 
 <div class="container">
     {foreach $articles as $article}

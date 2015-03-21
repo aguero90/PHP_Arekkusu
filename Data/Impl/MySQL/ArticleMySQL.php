@@ -114,6 +114,17 @@ class ArticleMySQL implements Article {
         return $this;
     }
 
+    public function hasImage(ImageMySQL $image) {
+
+        return in_array($image, $this->getImages());
+    }
+
+    public function hasTag(TagMySQL $tag) {
+
+        var_dump($this->getTags());
+        return in_array($tag, $this->getTags());
+    }
+
     public function copyFrom(ArticleMySQL $article) {
 
         $this->ID = $article->getID();
