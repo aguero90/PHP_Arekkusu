@@ -1,22 +1,22 @@
-<?php /* Smarty version Smarty-3.1.17, created on 2015-03-21 08:35:55
+<?php /* Smarty version Smarty-3.1.17, created on 2015-03-22 09:56:50
          compiled from "C:\wamp\www\PHP_Arekkusu\View\Smarty\Templates\Back\InsertArticle.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:21666550c6f00a13fb6-12470660%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:20513550d64b2422165-67976049%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '1a9d29070f2ffa5370c43e9e67ff185035b0c082' => 
     array (
       0 => 'C:\\wamp\\www\\PHP_Arekkusu\\View\\Smarty\\Templates\\Back\\InsertArticle.tpl',
-      1 => 1426926910,
+      1 => 1427014599,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '21666550c6f00a13fb6-12470660',
+  'nocache_hash' => '20513550d64b2422165-67976049',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.17',
-  'unifunc' => 'content_550c6f00a7bcf4_89512702',
+  'unifunc' => 'content_550d64b29989a3_46024663',
   'variables' => 
   array (
     'inserted' => 0,
@@ -27,7 +27,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_550c6f00a7bcf4_89512702')) {function content_550c6f00a7bcf4_89512702($_smarty_tpl) {?>
+<?php if ($_valid && !is_callable('content_550d64b29989a3_46024663')) {function content_550d64b29989a3_46024663($_smarty_tpl) {?>
 <div class="container">
 
     <?php if (isset($_smarty_tpl->tpl_vars['inserted']->value)) {?>
@@ -90,8 +90,8 @@ foreach ($_from as $_smarty_tpl->tpl_vars['image']->key => $_smarty_tpl->tpl_var
 $_smarty_tpl->tpl_vars['image']->_loop = true;
 ?>
                                                     <div class="col-xs-6 col-md-3">
-                                                        <div class="thumbnail selectImage">
-                                                            <img src="uploads/<?php echo $_smarty_tpl->tpl_vars['image']->value->getFalseName();?>
+                                                        <div class="thumbnail">
+                                                            <img class="selectImage" src="uploads/<?php echo $_smarty_tpl->tpl_vars['image']->value->getFalseName();?>
 " alt="<?php echo $_smarty_tpl->tpl_vars['image']->value->getTrueName();?>
 " data-ID="<?php echo $_smarty_tpl->tpl_vars['image']->value->getID();?>
 "/>

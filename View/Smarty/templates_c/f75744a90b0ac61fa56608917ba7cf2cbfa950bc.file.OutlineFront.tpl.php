@@ -1,22 +1,22 @@
-<?php /* Smarty version Smarty-3.1.17, created on 2015-03-20 19:16:40
+<?php /* Smarty version Smarty-3.1.17, created on 2015-03-21 16:05:40
          compiled from "C:\wamp\www\PHP_Arekkusu\View\Smarty\Templates\Front\OutlineFront.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:646255059dc58cfb87-73483977%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:4730550d64b04c99e7-79684184%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'f75744a90b0ac61fa56608917ba7cf2cbfa950bc' => 
     array (
       0 => 'C:\\wamp\\www\\PHP_Arekkusu\\View\\Smarty\\Templates\\Front\\OutlineFront.tpl',
-      1 => 1426878949,
+      1 => 1426950337,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '646255059dc58cfb87-73483977',
+  'nocache_hash' => '4730550d64b04c99e7-79684184',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.17',
-  'unifunc' => 'content_55059dc59ed404_64217661',
+  'unifunc' => 'content_550d64b05e2e27_12001562',
   'variables' => 
   array (
     'app_name' => 0,
@@ -24,7 +24,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_55059dc59ed404_64217661')) {function content_55059dc59ed404_64217661($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_550d64b05e2e27_12001562')) {function content_550d64b05e2e27_12001562($_smarty_tpl) {?><!DOCTYPE html>
 
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -99,12 +99,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
         <!-- FOOTER
         ==================================================================== -->
-        <div class="container-fluid">
-            <hr />
-            <footer id="outlineFooter">
-                <p>&copy; Company 2015</p>
-            </footer>
-        </div>
+
 
         <!-- JS -->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.js"></script>

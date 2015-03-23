@@ -71,12 +71,7 @@
 
         <!-- FOOTER
         ==================================================================== -->
-        <div class="container-fluid">
-            <hr />
-            <footer id="outlineFooter">
-                <p>&copy; Company 2015</p>
-            </footer>
-        </div>
+
 
         <!-- JS -->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.js"></script>

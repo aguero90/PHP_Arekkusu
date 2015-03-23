@@ -1,20 +1,22 @@
-<?php /* Smarty version Smarty-3.1.17, created on 2015-03-21 09:02:31
+<?php /* Smarty version Smarty-3.1.17, created on 2015-03-21 13:54:35
          compiled from "C:\wamp\www\PHP_Arekkusu\View\Smarty\Templates\Back\EditSelectedArticle.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:11073550d33a739ca87-19633794%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:19975550d64b6c50d99-31011969%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '42941657c29f3bf2a1e2e8e3d3c3dcbaa387a828' => 
     array (
       0 => 'C:\\wamp\\www\\PHP_Arekkusu\\View\\Smarty\\Templates\\Back\\EditSelectedArticle.tpl',
-      1 => 1426928072,
+      1 => 1426942470,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '11073550d33a739ca87-19633794',
+  'nocache_hash' => '19975550d64b6c50d99-31011969',
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.17',
+  'unifunc' => 'content_550d64b76461c7_63406360',
   'variables' => 
   array (
     'article' => 0,
@@ -24,10 +26,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'tag' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.17',
-  'unifunc' => 'content_550d33a74ba7b1_66786861',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_550d33a74ba7b1_66786861')) {function content_550d33a74ba7b1_66786861($_smarty_tpl) {?>
+<?php if ($_valid && !is_callable('content_550d64b76461c7_63406360')) {function content_550d64b76461c7_63406360($_smarty_tpl) {?>
 <div class="container">
 
     <div class="row">
@@ -45,6 +45,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
             <input type="hidden" name="s" value="0">
             <input type="hidden" name="ss" value="6">
+            <input type="hidden" name="id" value="<?php echo $_smarty_tpl->tpl_vars['article']->value->getID();?>
+">
 
             <div class="form-group">
                 <label for="title" class="col-sm-1 control-label">Titolo</label>
@@ -87,7 +89,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['image']->key => $_smarty_tpl->tpl_var
 $_smarty_tpl->tpl_vars['image']->_loop = true;
 ?>
                                                     <div class="col-xs-6 col-md-3">
-                                                        <div class="thumbnail selectImage <?php if ($_smarty_tpl->tpl_vars['article']->value->hasImage($_smarty_tpl->tpl_vars['image']->value)) {?>imageSelected<?php }?>}">
+                                                        <div class="thumbnail selectImage <?php if ($_smarty_tpl->tpl_vars['article']->value->hasImage($_smarty_tpl->tpl_vars['image']->value)) {?>imageSelected<?php }?>">
                                                             <img src="uploads/<?php echo $_smarty_tpl->tpl_vars['image']->value->getFalseName();?>
 " alt="<?php echo $_smarty_tpl->tpl_vars['image']->value->getTrueName();?>
 " data-ID="<?php echo $_smarty_tpl->tpl_vars['image']->value->getID();?>
@@ -108,18 +110,35 @@ $_smarty_tpl->tpl_vars['image']->_loop = true;
                         <!-- Thumbnail per immagini scelte -->
                         <!-- sarà riempito da main.js -->
                         <div class="row" id="selectedImagesThumbnail">
-                            <?php if ($_smarty_tpl->tpl_vars['article']->value->hasImage($_smarty_tpl->tpl_vars['image']->value)) {?>
-                                <div class='col-xs-6 col-md-3' data-imageID='<?php echo $_smarty_tpl->tpl_vars['image']->value->getID;?>
+                            <?php  $_smarty_tpl->tpl_vars['image'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['image']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['images']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['image']->key => $_smarty_tpl->tpl_vars['image']->value) {
+$_smarty_tpl->tpl_vars['image']->_loop = true;
+?>
+                                <?php if ($_smarty_tpl->tpl_vars['article']->value->hasImage($_smarty_tpl->tpl_vars['image']->value)) {?>
+                                    <div class='col-xs-6 col-md-3' data-imageID='<?php echo $_smarty_tpl->tpl_vars['image']->value->getID();?>
 '>
-                                    <div class='thumbnail selectImage'>
-                                        <img src="uploads/<?php echo $_smarty_tpl->tpl_vars['image']->value->getFalseName();?>
+                                        <div class='thumbnail selectImage'>
+                                            <img src="uploads/<?php echo $_smarty_tpl->tpl_vars['image']->value->getFalseName();?>
 " alt="<?php echo $_smarty_tpl->tpl_vars['image']->value->getTrueName();?>
 " data-ID="<?php echo $_smarty_tpl->tpl_vars['image']->value->getID();?>
 "/>
-                                    </div>>
-                                </div>
-                            <?php }?>
+                                        </div>
+                                    </div>
+                                <?php }?>
+                            <?php } ?>
                         </div>
+
+                        <?php  $_smarty_tpl->tpl_vars['image'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['image']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['images']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['image']->key => $_smarty_tpl->tpl_vars['image']->value) {
+$_smarty_tpl->tpl_vars['image']->_loop = true;
+?>
+                            <?php if ($_smarty_tpl->tpl_vars['article']->value->hasImage($_smarty_tpl->tpl_vars['image']->value)) {?>
+                                <input type="hidden" name="selectedImage[]" value="<?php echo $_smarty_tpl->tpl_vars['image']->value->getID();?>
+">
+                            <?php }?>
+                        <?php } ?>
 
                     <?php } else { ?>
                         <p>Non esistono immagini</p>
@@ -151,7 +170,7 @@ $_smarty_tpl->tpl_vars['tag']->_loop = true;
 
             <div class="form-group">
                 <div class="col-sm-offset-1 col-sm-10">
-                    <button type="submit" class="btn btn-primary" name="ea" value="1">Modifica</button>
+                    <button type="submit" class="btn btn-primary" name="e" value="1">Modifica</button>
                 </div>
             </div>
         </form>

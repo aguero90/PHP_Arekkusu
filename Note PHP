@@ -12,9 +12,6 @@ dalla directory che contiene lo script chiamato, nel nostro esempio pippo/pluto/
 Quindi, forse, conviene inserire i path assoluti
 
 
-
-
-
 // COMPORTAMENTO INCLUDE e REQUIRE CON PATH RELATIVO
 ================================================================================
 Se abbiamo 2 classi o 1 classe e 1 interfaccia con lo stesso nome (ad esempio Pippo.php),
@@ -28,6 +25,17 @@ se vogliamo che PHP interpreti un parametro di una form come un array dobbiamo
 aggiungere al nome una coppia di parentesi quadre: [].
 Ad esempio, se abbiamo una select multipla il cui attributo "name" è "tag" dobbiamo
 rinominarla in "tag[]".
+
+// COMPORTAMENTO array_diff
+================================================================================
+Due elementi sono considerati uguali se e solo se
+    (string)$elem1 === (string)$elem2
+
+Cioè quando la rappresentazione in stringa dei due elementi coincide.
+In altre parole, se vogliamo applicare array_diff() su tipi di oggetti definiti
+da noi, dobbiamo implementare all'interno delle classi il metodo magico
+__toString()
+
 
 
 

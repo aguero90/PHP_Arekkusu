@@ -26,8 +26,8 @@ function handleImageSelection(event) {
 
         var string = "";
         string += "<div class='col-xs-6 col-md-3' data-imageID='" + event.target.dataset.id + "' >";
-        string += "<div class='thumbnail selectImage'>";
-        string += "<img src='" + event.target.src + "' alt='" + event.target.alt + "' data-ID='" + event.target.dataset.id + "' />";
+        string += "<div class='thumbnail'>";
+        string += "<img class='selectImage' src='" + event.target.src + "' alt='" + event.target.alt + "' data-ID='" + event.target.dataset.id + "' />";
         string += "</div>";
         string += "</div>";
 

@@ -12,7 +12,7 @@ DA FARE
 
 - Quando inserisco un tag già presente sul DB esplode giustamente -> gestirlo!
 - Filtrare in qualche modo gli array provenienti da GET e POST. Per ora devo farlo
-  sonlo in InsertArticle.php
+  solo in InsertArticle.php
 
 
 
@@ -20,7 +20,7 @@ DA FARE
 CONTROLLARE
 ================================================================================
 
-Attenzione a salvare un articolo nuovo a cui sono stae associate immagini nuove!
+Attenzione a salvare un articolo nuovo a cui sono state associate immagini nuove!
 
 
 

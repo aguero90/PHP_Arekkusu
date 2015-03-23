@@ -1,22 +1,22 @@
-<?php /* Smarty version Smarty-3.1.17, created on 2015-03-21 08:28:24
+<?php /* Smarty version Smarty-3.1.17, created on 2015-03-21 17:24:37
          compiled from "C:\wamp\www\PHP_Arekkusu\View\Smarty\Templates\Back\OutlineBack.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:16493550c6f00958714-00627155%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:3720550d64b1d55779-55721620%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'cf2c010aba44a6c8e4e9ae6878af20a7be052c8c' => 
     array (
       0 => 'C:\\wamp\\www\\PHP_Arekkusu\\View\\Smarty\\Templates\\Back\\OutlineBack.tpl',
-      1 => 1426926502,
+      1 => 1426955049,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '16493550c6f00958714-00627155',
+  'nocache_hash' => '3720550d64b1d55779-55721620',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.17',
-  'unifunc' => 'content_550c6f009f7269_60602312',
+  'unifunc' => 'content_550d64b23f3355_43635933',
   'variables' => 
   array (
     'app_name' => 0,
@@ -25,7 +25,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_550c6f009f7269_60602312')) {function content_550c6f009f7269_60602312($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_550d64b23f3355_43635933')) {function content_550d64b23f3355_43635933($_smarty_tpl) {?><!DOCTYPE html>
 
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -124,8 +124,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                         </div>
                         <ul class="nav nav-pills nav-stacked">
                             <li role="presentation" <?php if ($_smarty_tpl->tpl_vars['subSectionActive']->value==6) {?>class="active"<?php }?>><a href="index.php?s=0&ss=6">Articolo</a></li>
-                            <li role="presentation" <?php if ($_smarty_tpl->tpl_vars['subSectionActive']->value==7) {?>class="active"<?php }?>><a href="index.php?s=0&ss=7">Immagine</a></li>
-                            <li role="presentation" <?php if ($_smarty_tpl->tpl_vars['subSectionActive']->value==8) {?>class="active"<?php }?>><a href="index.php?s=0&ss=8">Tag</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -140,12 +138,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
         <!-- FOOTER
         ==================================================================== -->
-        <div class="container-fluid">
-            <hr />
-            <footer id="outlineFooter">
-                <p>&copy; Company 2015</p>
-            </footer>
-        </div>
+
 
         <!-- JS -->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.js"></script>

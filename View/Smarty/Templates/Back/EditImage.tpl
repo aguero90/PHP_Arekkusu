@@ -1,1 +1,0 @@
-EditImage.tpl

@@ -86,4 +86,10 @@ class TagMySQL {
         return $this;
     }
 
+    public function __toString() {
+
+        return "ID: " . $this->getID() . " " .
+                "name: " . $this->getName();
+    }
+
 }

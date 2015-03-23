@@ -33,13 +33,13 @@ class InsertArticle extends ArekkusuBaseController {
     public function storeArticle() {
 
         $article = $this->getDataLayer()->createArticle();
-        $article->setTitle(filter_input(INPUT_POST, "title", FILTER_SANITIZE_STRING));
+        $article->setTitle(filter_input(INPUT_POST, "title", FILTER_SANITIZE_FULL_SPECIAL_CHARS));
         $article->setText(filter_input(INPUT_POST, "text", FILTER_SANITIZE_FULL_SPECIAL_CHARS));
 
 
         $arr = [];
 
-        if (is_array($_POST["selectedImage"])) {
+        if (!MyUtils::isEmpty($_POST["selectedImage"]) && is_array($_POST["selectedImage"])) {
 
             foreach ($_POST["selectedImage"] as $image) {
 
@@ -52,7 +52,7 @@ class InsertArticle extends ArekkusuBaseController {
 
         $arr = [];
 
-        if (is_array($_POST["tag"])) {
+        if (MyUtils::exist($_POST["tag"]) && is_array($_POST["tag"])) {
 
             foreach ($_POST["tag"] as $tag) {
 

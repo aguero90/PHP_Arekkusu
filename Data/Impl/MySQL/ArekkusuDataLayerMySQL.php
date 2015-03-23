@@ -33,17 +33,16 @@ class ArekkusuDataLayerMySQL extends DataLayerMySQL implements ArekkusuDataLayer
 
             // Article
             $this->sArticleByID = $this->connection->prepare("SELECT * FROM e_article WHERE ID=?");
-            $this->sArticlesByImage = $this->connection->prepare("SELECT ID FROM e_article WHERE imageID=?");
-            $this->sArticlesByTag = $this->connection->prepare("SELECT ID FROM e_article WHERE tagID=?");
-            $this->sArticlesByImageAndTag = $this->connection->prepare("SELECT ID FROM e_article WHERE imageID=? AND tagID=?");
+            $this->sArticlesByImage = $this->connection->prepare("SELECT articleID FROM r_article_image WHERE imageID=?");
+            $this->sArticlesByTag = $this->connection->prepare("SELECT articleID FROM r_article_tag WHERE tagID=?");
             $this->sArticles = $this->connection->prepare("SELECT ID FROM e_article");
-            $this->iArticle = $this->connection->prepare("INSERT INTO e_article (title, text, date) VALUES (?, ?, ?)");
-            $this->uArticle = $this->connection->prepare("UPDATE e_article SET title=?, text=?, date=? WHERE ID=?");
+            $this->iArticle = $this->connection->prepare("INSERT INTO e_article (title, text) VALUES (?, ?)");
+            $this->uArticle = $this->connection->prepare("UPDATE e_article SET title=?, text=? WHERE ID=?");
             $this->dArticle = $this->connection->prepare("DELETE FROM e_article WHERE ID=?");
 
             // Image
             $this->sImageByID = $this->connection->prepare("SELECT * FROM e_image WHERE ID=?");
-            $this->sImagesByArticle = $this->connection->prepare("SELECT ID FROM e_image WHERE articleID=?");
+            $this->sImagesByArticle = $this->connection->prepare("SELECT imageID FROM r_article_image WHERE articleID=?");
             $this->sImages = $this->connection->prepare("SELECT ID FROM e_image");
             $this->iImage = $this->connection->prepare("INSERT INTO e_image (trueName, falseName) VALUES (?, ?)");
             $this->uImage = $this->connection->prepare("UPDATE e_image SET trueName=?, falseName=? WHERE ID=?");
@@ -51,7 +50,7 @@ class ArekkusuDataLayerMySQL extends DataLayerMySQL implements ArekkusuDataLayer
 
             // Tag
             $this->sTagByID = $this->connection->prepare("SELECT * FROM e_tag WHERE ID=?");
-            $this->sTagsByArticle = $this->connection->prepare("SELECT ID FROM e_tag WHERE articleID=?");
+            $this->sTagsByArticle = $this->connection->prepare("SELECT tagID FROM r_article_tag WHERE articleID=?");
             $this->sTags = $this->connection->prepare("SELECT ID FROM e_tag");
             $this->iTag = $this->connection->prepare("INSERT INTO e_tag (name) VALUES (?)");
             $this->uTag = $this->connection->prepare("UPDATE e_tag SET name=? WHERE ID=?");
@@ -112,7 +111,7 @@ class ArekkusuDataLayerMySQL extends DataLayerMySQL implements ArekkusuDataLayer
     public function getArticles(ImageMySQL $image = null, TagMySQL $tag = null) {
 
         if (!MyUtils::isEmpty($image) && !MyUtils::isEmpty($tag)) {
-            return $this->selectArticlesByImageAndTag($image, $tag);
+            echo "CHIAMATA NON VALIDA: non puoi chiedere un articolo sia per immagine che per tag ===========================";
         } elseif (!MyUtils::isEmpty($image)) {
             return $this->selectArticlesByImage($image);
         } elseif (!MyUtils::isEmpty($tag)) {
@@ -122,26 +121,7 @@ class ArekkusuDataLayerMySQL extends DataLayerMySQL implements ArekkusuDataLayer
         }
     }
 
-    // sArticlesByImageAndTag = SELECT ID FROM e_article WHERE imageID=? AND tagID=?
-    private function selectArticlesByImageAndTag(ImageMySQL $image, TagMySQL $tag) {
-
-        $result = array();
-        try {
-
-            $this->sArticlesByImageAndTag->bindValue(1, $image->getID());
-            $this->sArticlesByImageAndTag->bindValue(2, $tag->getID());
-            $this->sArticlesByImageAndTag->execute();
-            while (($rs = $this->sArticlesByImageAndTag->fetch(PDO::FETCH_ASSOC)) !== false) {
-                array_push($result, $this->getArticle((int) $rs["ID"]));
-            }
-        } catch (PDOException $ex) {
-            echo "PDOEXCEPTION ===========================";
-            var_dump($ex);
-        }
-        return $result;
-    }
-
-    // sArticlesByImage = SELECT ID FROM e_article WHERE imageID=?
+    // sArticlesByImage = SELECT articleID FROM r_article_image WHERE imageID=?
     private function selectArticlesByImage(ImageMySQL $image) {
 
         $result = array();
@@ -150,7 +130,7 @@ class ArekkusuDataLayerMySQL extends DataLayerMySQL implements ArekkusuDataLayer
             $this->sArticlesByImage->bindValue(1, $image->getID());
             $this->sArticlesByImage->execute();
             while (($rs = $this->sArticlesByImage->fetch(PDO::FETCH_ASSOC)) !== false) {
-                array_push($result, $this->getArticle((int) $rs["ID"]));
+                array_push($result, $this->getArticle((int) $rs["articleID"]));
             }
         } catch (PDOException $ex) {
             echo "PDOEXCEPTION ===========================";
@@ -159,7 +139,7 @@ class ArekkusuDataLayerMySQL extends DataLayerMySQL implements ArekkusuDataLayer
         return $result;
     }
 
-    // sArticlesByTag = SELECT ID FROM e_article WHERE tagID=?
+    // sArticlesByTag = SELECT articleID FROM r_article_tag WHERE tagID=?
     private function selectArticlesByTag(TagMySQL $tag) {
 
         $result = array();
@@ -168,7 +148,7 @@ class ArekkusuDataLayerMySQL extends DataLayerMySQL implements ArekkusuDataLayer
             $this->sArticlesByTag->bindValue(1, $tag->getID());
             $this->sArticlesByTag->execute();
             while (($rs = $this->sArticlesByTag->fetch(PDO::FETCH_ASSOC)) !== false) {
-                array_push($result, $this->getArticle((int) $rs["ID"]));
+                array_push($result, $this->getArticle((int) $rs["articleID"]));
             }
         } catch (PDOException $ex) {
             echo "PDOEXCEPTION ===========================";
@@ -210,14 +190,13 @@ class ArekkusuDataLayerMySQL extends DataLayerMySQL implements ArekkusuDataLayer
         }
     }
 
-    // uArticle = UPDATE e_article SET title=?, text=?, date=? WHERE ID=?
+    // uArticle = UPDATE e_article SET title=?, text=? WHERE ID=?
     private function updateArticle(ArticleMySQL $article) {
 
         try {
             $this->uArticle->bindValue(1, $article->getTitle());
             $this->uArticle->bindValue(2, $article->getText());
-            $this->uArticle->bindValue(3, $article->getDate());
-            $this->uArticle->bindValue(4, $article->getID());
+            $this->uArticle->bindValue(3, $article->getID());
             $this->uArticle->execute();
 
             // save relationship
@@ -225,6 +204,7 @@ class ArekkusuDataLayerMySQL extends DataLayerMySQL implements ArekkusuDataLayer
             $DBImages = $this->getImages($article);
             // inseriamo la relazione $article $image per tutti quei prodotti
             // che sono in memoria ma non nel DB
+
             foreach (array_diff($memoryImages, $DBImages) as $image) {
                 $this->insertArticleImage($article->getID(), $image->getID());
             }
@@ -252,16 +232,18 @@ class ArekkusuDataLayerMySQL extends DataLayerMySQL implements ArekkusuDataLayer
         return $article;
     }
 
-    // iArticle = INSERT INTO e_article (title, text, date) VALUES (?, ?, ?)
+    // iArticle = INSERT INTO e_article (title, text) VALUES (?, ?)
     private function insertArticle(ArticleMySQL $article) {
 
         try {
+
             $this->iArticle->bindValue(1, $article->getTitle());
             $this->iArticle->bindValue(2, $article->getText());
-            $this->iArticle->bindValue(3, $article->getDate());
-            $this->iArticle->execute();
+            var_dump($this->iArticle->execute());
 
             $ID = (int) $this->connection->lastInsertId();
+
+            var_dump($ID);
 
             // save relationship
             foreach ($article->getImages() as $image) {
@@ -336,7 +318,7 @@ class ArekkusuDataLayerMySQL extends DataLayerMySQL implements ArekkusuDataLayer
         }
     }
 
-    // sImagesByArticle = SELECT ID FROM e_image WHERE articleID=?
+    // sImagesByArticle = SELECT imageID FROM r_article_image WHERE articleID=?
     private function selectImagesByArticle(ArticleMySQL $article) {
 
         $result = array();
@@ -345,7 +327,7 @@ class ArekkusuDataLayerMySQL extends DataLayerMySQL implements ArekkusuDataLayer
             $this->sImagesByArticle->bindValue(1, $article->getID());
             $this->sImagesByArticle->execute();
             while (($rs = $this->sImagesByArticle->fetch(PDO::FETCH_ASSOC)) !== false) {
-                array_push($result, $this->getImage((int) $rs["ID"]));
+                array_push($result, $this->getImage((int) $rs["imageID"]));
             }
         } catch (PDOException $ex) {
             echo "PDOEXCEPTION ===========================";
@@ -495,7 +477,7 @@ class ArekkusuDataLayerMySQL extends DataLayerMySQL implements ArekkusuDataLayer
         }
     }
 
-    // sTagsByArticle = SELECT ID FROM e_tag WHERE articleID=?
+    // sTagsByArticle = SELECT tagID FROM r_article_tag WHERE articleID=?
     private function selectTagsByArticle(ArticleMySQL $article) {
 
         $result = array();
@@ -504,7 +486,7 @@ class ArekkusuDataLayerMySQL extends DataLayerMySQL implements ArekkusuDataLayer
             $this->sTagsByArticle->bindValue(1, $article->getID());
             $this->sTagsByArticle->execute();
             while (($rs = $this->sTagsByArticle->fetch(PDO::FETCH_ASSOC)) !== false) {
-                array_push($result, $this->getTag((int) $rs["ID"]));
+                array_push($result, $this->getTag((int) $rs["tagID"]));
             }
         } catch (PDOException $ex) {
             echo "PDOEXCEPTION ===========================";

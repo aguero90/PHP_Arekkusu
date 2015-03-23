@@ -96,8 +96,6 @@
                         </div>
                         <ul class="nav nav-pills nav-stacked">
                             <li role="presentation" {if $subSectionActive == 6}class="active"{/if}><a href="index.php?s=0&ss=6">Articolo</a></li>
-                            <li role="presentation" {if $subSectionActive == 7}class="active"{/if}><a href="index.php?s=0&ss=7">Immagine</a></li>
-                            <li role="presentation" {if $subSectionActive == 8}class="active"{/if}><a href="index.php?s=0&ss=8">Tag</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -111,12 +109,7 @@
 
         <!-- FOOTER
         ==================================================================== -->
-        <div class="container-fluid">
-            <hr />
-            <footer id="outlineFooter">
-                <p>&copy; Company 2015</p>
-            </footer>
-        </div>
+
 
         <!-- JS -->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.js"></script>

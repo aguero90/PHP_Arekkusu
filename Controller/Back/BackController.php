@@ -15,8 +15,6 @@ class BackController extends ArekkusuBaseController {
     const DELETE_IMAGE = 4;
     const DELETE_TAG = 5;
     const EDIT_ARTICLE = 6;
-    const EDIT_IMAGE = 7;
-    const EDIT_TAG = 8;
 
     private $controller;
     private $section;
@@ -38,56 +36,37 @@ class BackController extends ArekkusuBaseController {
         switch ($this->section) {
 
             case self::INSERT_ARTICLE:
-                echo 'INSERT_ARTICLE';
                 $this->controller = new InsertArticle();
                 $this->controller->processRequest();
                 break;
 
             case self::INSERT_IMAGE:
-                echo 'INSERT_IMAGE';
                 $this->controller = new InsertImage();
                 $this->controller->processRequest();
                 break;
 
             case self::INSERT_TAG:
-                echo 'INSERT_TAG';
                 $this->controller = new InsertTag();
                 $this->controller->processRequest();
                 break;
 
             case self::DELETE_ARTICLE:
-                echo 'DELETE_ARTICLE';
                 $this->controller = new DeleteArticle();
                 $this->controller->processRequest();
                 break;
 
             case self::DELETE_IMAGE:
-                echo 'DELETE_IMAGE';
                 $this->controller = new DeleteImage();
                 $this->controller->processRequest();
                 break;
 
             case self::DELETE_TAG:
-                echo 'DELETE_TAG';
                 $this->controller = new DeleteTag();
                 $this->controller->processRequest();
                 break;
 
             case self::EDIT_ARTICLE:
-                echo 'EDIT_ARTICLE';
                 $this->controller = new EditArticle();
-                $this->controller->processRequest();
-                break;
-
-            case self::EDIT_IMAGE:
-                echo 'EDIT_IMAGE';
-                $this->controller = new EditImage();
-                $this->controller->processRequest();
-                break;
-
-            case self::EDIT_TAG:
-                echo 'EDIT_TAG';
-                $this->controller = new EditTag();
                 $this->controller->processRequest();
                 break;
 

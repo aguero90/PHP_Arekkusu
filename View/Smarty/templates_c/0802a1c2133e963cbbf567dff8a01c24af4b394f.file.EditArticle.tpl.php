@@ -1,20 +1,22 @@
-<?php /* Smarty version Smarty-3.1.17, created on 2015-03-21 08:28:53
+<?php /* Smarty version Smarty-3.1.17, created on 2015-03-21 16:02:18
          compiled from "C:\wamp\www\PHP_Arekkusu\View\Smarty\Templates\Back\EditArticle.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:12346550d2bc5f06ba2-09356425%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:23622550d64b5943550-81353350%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '0802a1c2133e963cbbf567dff8a01c24af4b394f' => 
     array (
       0 => 'C:\\wamp\\www\\PHP_Arekkusu\\View\\Smarty\\Templates\\Back\\EditArticle.tpl',
-      1 => 1426925793,
+      1 => 1426950097,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '12346550d2bc5f06ba2-09356425',
+  'nocache_hash' => '23622550d64b5943550-81353350',
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.17',
+  'unifunc' => 'content_550d64b5bf2df4_99373369',
   'variables' => 
   array (
     'edited' => 0,
@@ -22,16 +24,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'article' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.17',
-  'unifunc' => 'content_550d2bc604c387_67286444',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_550d2bc604c387_67286444')) {function content_550d2bc604c387_67286444($_smarty_tpl) {?>
+<?php if ($_valid && !is_callable('content_550d64b5bf2df4_99373369')) {function content_550d64b5bf2df4_99373369($_smarty_tpl) {?>
 <div class="container">
 
     <?php if (isset($_smarty_tpl->tpl_vars['edited']->value)) {?>
         <div class="alert alert-success alert-dismissible" role="alert">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <p>La modifica è stata effettuata con successo!</p>
+            <p>La modifica &egrave; stata effettuata con successo!</p>
         </div>
     <?php }?>
 
@@ -72,7 +72,7 @@ $_smarty_tpl->tpl_vars['article']->_loop = true;
 
             <div class="form-group">
                 <div class="col-sm-offset-1 col-sm-10">
-                    <button type="submit" class="btn btn-primary" name="ea" value="1">Modifica</button>
+                    <button type="submit" class="btn btn-primary" name="em" value="1">Modifica</button>
                 </div>
             </div>
         </form>

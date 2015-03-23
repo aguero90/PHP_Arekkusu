@@ -4,7 +4,7 @@
     {if isset($edited)}
         <div class="alert alert-success alert-dismissible" role="alert">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <p>La modifica è stata effettuata con successo!</p>
+            <p>La modifica &egrave; stata effettuata con successo!</p>
         </div>
     {/if}
 
@@ -39,7 +39,7 @@
 
             <div class="form-group">
                 <div class="col-sm-offset-1 col-sm-10">
-                    <button type="submit" class="btn btn-primary" name="ea" value="1">Modifica</button>
+                    <button type="submit" class="btn btn-primary" name="em" value="1">Modifica</button>
                 </div>
             </div>
         </form>

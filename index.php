@@ -28,7 +28,7 @@ if (!MyUtils::isEmpty($_GET)) {
 
     $section = filter_input(INPUT_POST, SECTION_ID, FILTER_SANITIZE_NUMBER_INT);
 } else {
-// $_GET & $_POST sono vuoti => Home
+    // $_GET & $_POST sono vuoti => Home
     $controller = new HomeController();
     $controller->processRequest();
 }
@@ -38,19 +38,16 @@ if (MyUtils::exist($section)) {
     switch ($section) {
 
         case BACK:
-            echo 'BACK';
             $controller = new BackController();
             $controller->processRequest();
             break;
 
         case ARTICLE_LIST:
-            echo 'ARTICLE_LIST';
             $controller = new ArticleListController();
             $controller->processRequest();
             break;
 
         case ARTICLE:
-            echo 'ARTICLE';
             $controller = new ArticleController();
             $controller->processRequest();
             break;

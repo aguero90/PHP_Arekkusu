@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.17, created on 2015-03-21 08:17:41
+<?php /* Smarty version Smarty-3.1.17, created on 2015-03-21 17:24:44
          compiled from "C:\wamp\www\PHP_Arekkusu\View\Smarty\Templates\Back\InsertImage.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:20016550c6f0a39c993-61904231%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:799550d9b4c863089-39017948%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,19 +11,19 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '20016550c6f0a39c993-61904231',
+  'nocache_hash' => '799550d9b4c863089-39017948',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.17',
-  'unifunc' => 'content_550c6f0a3d9479_66332056',
   'variables' => 
   array (
     'inserted' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.17',
+  'unifunc' => 'content_550d9b4c956c86_59318997',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_550c6f0a3d9479_66332056')) {function content_550c6f0a3d9479_66332056($_smarty_tpl) {?>
+<?php if ($_valid && !is_callable('content_550d9b4c956c86_59318997')) {function content_550d9b4c956c86_59318997($_smarty_tpl) {?>
 <div class="container">
 
     <?php if (isset($_smarty_tpl->tpl_vars['inserted']->value)) {?>

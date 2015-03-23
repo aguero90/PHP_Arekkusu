@@ -121,7 +121,6 @@ class ArticleMySQL implements Article {
 
     public function hasTag(TagMySQL $tag) {
 
-        var_dump($this->getTags());
         return in_array($tag, $this->getTags());
     }
 

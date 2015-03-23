@@ -100,4 +100,11 @@ class ImageMySQL implements Image {
         return $this;
     }
 
+    public function __toString() {
+
+        return "ID: " . $this->getID() . " " .
+                "trueName: " . $this->getTrueName() . " " .
+                "falseName: " . $this->getFalseName();
+    }
+
 }

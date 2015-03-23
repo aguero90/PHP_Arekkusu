@@ -1,0 +1,10 @@
+
+// COMPORTAMENTO DEFAULT TIMESTAMP
+================================================================================
+Per far sì che durante l'inserimento il timestamp sia quello attuale basta
+semplicemente non passare il parametro alla query.
+Ad esempio, se abbiamo un'entità con i seguenti attributi: "titolo", "testo", "data"
+basterà passare solo "titolo" e "testo" alla query e, se abbiamo definito che è
+impossibile che l'attributo "data" sia NULL, sarà impostato il timestamp come
+predefinito.
+

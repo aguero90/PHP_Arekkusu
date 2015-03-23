@@ -57,8 +57,8 @@
                                             <div class="row">
                                                 {foreach $images as $image}
                                                     <div class="col-xs-6 col-md-3">
-                                                        <div class="thumbnail selectImage">
-                                                            <img src="uploads/{$image->getFalseName()}" alt="{$image->getTrueName()}" data-ID="{$image->getID()}"/>
+                                                        <div class="thumbnail">
+                                                            <img class="selectImage" src="uploads/{$image->getFalseName()}" alt="{$image->getTrueName()}" data-ID="{$image->getID()}"/>
                                                         </div>
                                                     </div>
                                                 {/foreach}

@@ -15,6 +15,7 @@
 
             <input type="hidden" name="s" value="0">
             <input type="hidden" name="ss" value="6">
+            <input type="hidden" name="id" value="{$article->getID()}">
 
             <div class="form-group">
                 <label for="title" class="col-sm-1 control-label">Titolo</label>
@@ -51,7 +52,7 @@
                                             <div class="row">
                                                 {foreach $images as $image}
                                                     <div class="col-xs-6 col-md-3">
-                                                        <div class="thumbnail selectImage {if $article->hasImage($image)}imageSelected{/if}}">
+                                                        <div class="thumbnail selectImage {if $article->hasImage($image)}imageSelected{/if}">
                                                             <img src="uploads/{$image->getFalseName()}" alt="{$image->getTrueName()}" data-ID="{$image->getID()}"/>
                                                         </div>
                                                     </div>
@@ -69,14 +70,22 @@
                         <!-- Thumbnail per immagini scelte -->
                         <!-- sarà riempito da main.js -->
                         <div class="row" id="selectedImagesThumbnail">
-                            {if $article->hasImage($image)}
-                                <div class='col-xs-6 col-md-3' data-imageID='{$image->getID}'>
-                                    <div class='thumbnail selectImage'>
-                                        <img src="uploads/{$image->getFalseName()}" alt="{$image->getTrueName()}" data-ID="{$image->getID()}"/>
-                                    </div>>
-                                </div>
-                            {/if}
+                            {foreach $images as $image}
+                                {if $article->hasImage($image)}
+                                    <div class='col-xs-6 col-md-3' data-imageID='{$image->getID()}'>
+                                        <div class='thumbnail selectImage'>
+                                            <img src="uploads/{$image->getFalseName()}" alt="{$image->getTrueName()}" data-ID="{$image->getID()}"/>
+                                        </div>
+                                    </div>
+                                {/if}
+                            {/foreach}
                         </div>
+
+                        {foreach $images as $image}
+                            {if $article->hasImage($image)}
+                                <input type="hidden" name="selectedImage[]" value="{$image->getID()}">
+                            {/if}
+                        {/foreach}
 
                     {else}
                         <p>Non esistono immagini</p>
@@ -102,7 +111,7 @@
 
             <div class="form-group">
                 <div class="col-sm-offset-1 col-sm-10">
-                    <button type="submit" class="btn btn-primary" name="ea" value="1">Modifica</button>
+                    <button type="submit" class="btn btn-primary" name="e" value="1">Modifica</button>
                 </div>
             </div>
         </form>

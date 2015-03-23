@@ -1,1 +1,0 @@
-EditTag.tpl
